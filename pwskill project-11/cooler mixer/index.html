@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Mixer</title>
+    <script>
+        function mixColors() {
+            var color1 = document.getElementById("color1").value.toLowerCase();
+            var color2 = document.getElementById("color2").value.toLowerCase();
+            var resultParagraph = document.getElementById("result");
+
+            var resultColor;
+
+            switch (color1) {
+                case "red":
+                    switch (color2) {
+                        case "blue":
+                            resultColor = "purple";
+                            break;
+                        case "yellow":
+                            resultColor = "orange";
+                            break;
+                        default:
+                            resultColor = "Invalid color combination";
+                            break;
+                    }
+                    break;
+                case "blue":
+                    switch (color2) {
+                        case "red":
+                            resultColor = "purple";
+                            break;
+                        case "yellow":
+                            resultColor = "green";
+                            break;
+                        default:
+                            resultColor = "Invalid color combination";
+                            break;
+                    }
+                    break;
+                case "yellow":
+                    switch (color2) {
+                        case "red":
+                        case "blue":
+                            resultColor = "orange";
+                            break;
+                        default:
+                            resultColor = "Invalid color combination";
+                            break;
+                    }
+                    break;
+                default:
+                    resultColor = "Invalid color combination";
+                    break;
+            }
+
+            resultParagraph.textContent = resultColor;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Color Mixer</h1>
+    <label for="color1">Color 1:</label>
+    <input type="text" id="color1"><br>
+    <label for="color2">Color 2:</label>
+    <input type="text" id="color2"><br>
+    <button onclick="mixColors()">Mix Colors</button>
+    <p id="result"></p>
+</body>
+
+</html>

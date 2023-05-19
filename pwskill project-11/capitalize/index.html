@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Name Capitalizer</title>
+    <script>
+        function capitalizeFirstLetter() {
+            var name = document.getElementById("name").value;
+            var capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+            var resultParagraph = document.getElementById("result");
+            resultParagraph.textContent = capitalizedName;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Name Capitalizer</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br>
+    <button onclick="capitalizeFirstLetter()">Submit</button>
+    <p id="result"></p>
+</body>
+
+</html>

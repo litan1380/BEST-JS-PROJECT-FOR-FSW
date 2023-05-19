@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Remove Duplicates</title>
+    <script>
+        function removeDuplicates() {
+            var inputItems = document.getElementById("items").value;
+            var items = inputItems.split(",").map(function (item) {
+                return item.trim();
+            });
+
+            var uniqueItems = Array.from(new Set(items));
+
+            var resultParagraph = document.getElementById("result");
+            resultParagraph.textContent = "Unique items: " + uniqueItems.join(", ");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Remove Duplicates</h1>
+    <label for="items">Items (comma-separated):</label>
+    <input type="text" id="items"><br>
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+    <p id="result"></p>
+</body>
+
+</html>

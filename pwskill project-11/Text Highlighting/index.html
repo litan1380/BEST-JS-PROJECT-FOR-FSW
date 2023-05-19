@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Highlighting</title>
+    <style>
+        p {
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="paragraph">This is a paragraph with some words that are greater than 8 characters.</p>
+
+    <script>
+        function highlightWords() {
+            var paragraph = document.getElementById("paragraph");
+            var words = paragraph.textContent.split(" ");
+
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > 8) {
+                    var word = document.createElement("span");
+                    word.textContent = words[i];
+                    word.className = "highlight";
+                    paragraph.appendChild(word);
+                }
+            }
+        }
+
+        window.onload = highlightWords;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamically Adding List Items to an Ordered List</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button onclick="addListItem()">Add List Item</button>
+
+    <script>
+        var listItems = [
+            "Item 1",
+            "Item 2",
+            "Item 3"
+        ];
+
+        var currentIndex = 3;
+
+        function addListItem() {
+            if (currentIndex < listItems.length) {
+                var newListItem = document.createElement("li");
+                newListItem.textContent = listItems[currentIndex];
+                document.getElementById("list").appendChild(newListItem);
+                currentIndex++;
+            } else {
+                alert("All items have been added");
+            }
+        }
+    </script>
+</body>
+
+</html>

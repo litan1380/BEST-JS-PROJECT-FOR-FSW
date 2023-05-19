@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Divisibility Check</title>
+    <script>
+        function checkDivisibility() {
+            var numbers = document.getElementById("numbers").value;
+            var numbersArray = numbers.split(",").map(function (num) {
+                return parseInt(num.trim());
+            });
+
+            var divisibleByThree = [];
+
+            for (var i = 0; i < numbersArray.length; i++) {
+                var number = numbersArray[i];
+
+                if (number % 2 === 0) {
+                    continue;
+                }
+
+                if (number % 3 === 0) {
+                    divisibleByThree.push(number);
+                }
+            }
+
+            var resultParagraph = document.getElementById("result");
+            resultParagraph.textContent = "Numbers divisible by 3, but not by 2: " + divisibleByThree.join(", ");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Divisibility Check</h1>
+    <label for="numbers">Numbers (comma-separated):</label>
+    <input type="text" id="numbers"><br>
+    <button onclick="checkDivisibility()">Check Divisibility</button>
+    <p id="result"></p>
+</body>
+
+</html>

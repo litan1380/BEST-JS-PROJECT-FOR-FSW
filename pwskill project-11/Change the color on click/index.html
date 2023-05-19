@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Color on Click</title>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        button {
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+    <script>
+        var colors = [
+            "red",
+            "green",
+            "blue",
+            "yellow",
+            "purple"
+        ];
+
+        function changeBackgroundColor() {
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+
+</html>

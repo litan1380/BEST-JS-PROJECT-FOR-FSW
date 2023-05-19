@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Password Validator</title>
+    <script>
+        function validatePassword() {
+            var passwordInput = document.getElementById("password");
+            var confirmPasswordInput = document.getElementById("confirm-password");
+            var resultParagraph = document.getElementById("result");
+
+            var password = passwordInput.value;
+            var confirmPassword = confirmPasswordInput.value;
+
+            if (password === confirmPassword) {
+                resultParagraph.textContent = "Password Matched. Password validation Successful.";
+            } else {
+                resultParagraph.textContent = "Password didn't match. Password validation unsuccessful.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Password Validator</h1>
+    <label for="password">Password:</label>
+    <input type="password" id="password"><br>
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password"><br>
+    <button onclick="validatePassword()">Validate</button>
+    <p id="result"></p>
+</body>
+
+</html>

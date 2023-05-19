@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inverted Right-Angled Triangle Pattern</title>
+    <style>
+        pre {
+            font-family: monospace;
+        }
+    </style>
+    <script>
+        function printPattern() {
+            var i = parseInt(document.getElementById("input").value);
+
+            var pattern = "";
+            for (var row = i; row >= 1; row--) {
+                for (var col = 1; col <= row; col++) {
+                    pattern += "*";
+                }
+                pattern += "\n";
+            }
+
+            var resultPre = document.getElementById("result");
+            resultPre.textContent = pattern;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Inverted Right-Angled Triangle Pattern</h1>
+    <label for="input">Enter a number:</label>
+    <input type="number" id="input"><br>
+    <button onclick="printPattern()">Print Pattern</button>
+    <pre id="result"></pre>
+</body>
+
+</html>

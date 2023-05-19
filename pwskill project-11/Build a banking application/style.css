@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #accountDetails, #transaction {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 80px;
+  }
+  
+  input[type="text"], input[type="number"] {
+    width: 150px;
+  }
+  
+  button {
+    margin-left: 85px;
+  }
+  
+  #result {
+    font-weight: bold;
+  }
+  

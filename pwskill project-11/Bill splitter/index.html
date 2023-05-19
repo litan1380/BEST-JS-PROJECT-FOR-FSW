@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bill Splitter</title>
+    <script>
+        function calculateBill() {
+            // Get the cost of each dish and the number of people sharing it
+            var dish1Cost = parseFloat(document.getElementById('dish1-cost').value);
+            var dish1People = parseInt(document.getElementById('dish1-people').value);
+            var dish2Cost = parseFloat(document.getElementById('dish2-cost').value);
+            var dish2People = parseInt(document.getElementById('dish2-people').value);
+
+            // Calculate the total bill
+            var totalBill = (dish1Cost * dish1People) + (dish2Cost * dish2People);
+
+            // Calculate the bill per person
+            var billPerPerson = totalBill / (dish1People + dish2People);
+
+            // Create an object to store the results
+            var billSplit = {
+                totalBill: totalBill,
+                billPerPerson: billPerPerson
+            };
+
+            // Display the results
+            document.getElementById('total-bill').textContent = billSplit.totalBill.toFixed(2);
+            document.getElementById('bill-per-person').textContent = billSplit.billPerPerson.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Bill Splitter</h1>
+    <h2>Dish 1</h2>
+    <label for="dish1-cost">Cost:</label>
+    <input type="text" id="dish1-cost" /><br>
+    <label for="dish1-people">Number of People:</label>
+    <input type="text" id="dish1-people" /><br>
+
+    <h2>Dish 2</h2>
+    <label for="dish2-cost">Cost:</label>
+    <input type="text" id="dish2-cost" /><br>
+    <label for="dish2-people">Number of People:</label>
+    <input type="text" id="dish2-people" /><br>
+
+    <button onclick="calculateBill()">Calculate</button>
+
+    <h2>Results</h2>
+    <p>Total Bill: $<span id="total-bill"></span></p>
+    <p>Bill per Person: $<span id="bill-per-person"></span></p>
+</body>
+
+</html>

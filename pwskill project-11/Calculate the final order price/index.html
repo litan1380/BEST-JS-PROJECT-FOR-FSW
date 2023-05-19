@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Final Order Price</title>
+    <script>
+        // Arrow function to calculate the total cost of items in a customer's cart
+        const calculateTotalCost = (cart) => {
+            let totalCost = 0;
+            for (let item of cart) {
+                totalCost += item.unitPrice * item.quantity;
+            }
+            return totalCost;
+        };
+
+        // Example usage
+        const cart = [
+            { unitPrice: 10, quantity: 2 },
+            { unitPrice: 5, quantity: 3 },
+            { unitPrice: 8, quantity: 1 }
+        ];
+
+        const finalOrderPrice = calculateTotalCost(cart);
+        console.log(finalOrderPrice);
+    </script>
+</head>
+
+<body>
+    <h1>Final Order Price</h1>
+</body>
+
+</html>

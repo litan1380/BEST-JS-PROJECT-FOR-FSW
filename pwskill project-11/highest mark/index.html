@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Highest Marks</title>
+    <script>
+        function findHighestMarks() {
+            var marks = [];
+            for (var i = 1; i <= 5; i++) {
+                var input = document.getElementById("student" + i).value;
+                marks.push(parseFloat(input));
+            }
+
+            var highestMarks = marks[0];
+            for (var i = 1; i < marks.length; i++) {
+                highestMarks = (marks[i] > highestMarks) ? marks[i] : highestMarks;
+            }
+
+            console.log("Highest Marks: " + highestMarks);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Highest Marks</h1>
+    <label for="student1">Student 1:</label>
+    <input type="text" id="student1"><br>
+    <label for="student2">Student 2:</label>
+    <input type="text" id="student2"><br>
+    <label for="student3">Student 3:</label>
+    <input type="text" id="student3"><br>
+    <label for="student4">Student 4:</label>
+    <input type="text" id="student4"><br>
+    <label for="student5">Student 5:</label>
+    <input type="text" id="student5"><br>
+    <button onclick="findHighestMarks()">Find Highest Marks</button>
+</body>
+
+</html>
